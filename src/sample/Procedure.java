@@ -23,6 +23,21 @@ public class Procedure {
         }
         return false;
     }
+    public static boolean checkLogin(String login) throws SQLException {
+        try {
+            assert JDBCPostgreSQL.con != null;
+            PreparedStatement stmt = JDBCPostgreSQL.con.prepareStatement("SELECT login FROM customers");
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                if (res.getString(1).equals(login)) {
+                    return true;
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
 
 
 
