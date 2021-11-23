@@ -7,8 +7,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import users.User;
 
-import java.io.IOException;
-
 public class MenuController {
 
     @FXML

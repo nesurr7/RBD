@@ -28,7 +28,7 @@ public class LogInController {
     private Text textSignal;
 
     @FXML
-    void loginIn(MouseEvent event) throws InterruptedException, IOException, SQLException {
+    void loginIn(MouseEvent event) throws IOException, SQLException {
         String password = passwordArea.getText(),login = loginArea.getText();
         if(password.equals(Admin.password) && login.equals(Admin.login)){
             textSignal.setFill(Color.BLUE);
