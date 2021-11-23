@@ -17,6 +17,7 @@ import java.sql.SQLException;
 
 public class LogInController {
 
+    public static Scene LOGIN_SCENE;
     @FXML
     private TextField loginArea;
 
@@ -48,5 +49,14 @@ public class LogInController {
         }
 
     }
+
+    @FXML
+    void register(MouseEvent event) throws IOException {
+        Stage stage =(Stage) loginArea.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Reg.fxml"));
+        stage.setTitle("Menu");
+        stage.setScene(new Scene(root));
+    }
+
 
 }

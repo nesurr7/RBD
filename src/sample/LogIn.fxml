@@ -11,28 +11,33 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LogInController">
    <children>
-      <ImageView fx:id="login_image" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="login_image" fitHeight="150.0" fitWidth="200.0" layoutX="107.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../rsc/login.png" />
          </image>
       </ImageView>
-      <Button defaultButton="true" layoutX="191.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#loginIn" prefHeight="72.0" prefWidth="218.0" text="Enter">
+      <Button defaultButton="true" layoutX="207.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#loginIn" prefHeight="47.0" prefWidth="187.0" text="Вход">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="79.0" fitWidth="240.0" layoutX="201.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="79.0" fitWidth="240.0" layoutX="107.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../rsc/password.png" />
          </image>
       </ImageView>
-      <TextField fx:id="loginArea" layoutX="226.0" layoutY="123.0" />
-      <TextField fx:id="passwordArea" layoutX="226.0" layoutY="264.0" />
-      <Text fx:id="textSignal" layoutX="222.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.0">
+      <TextField fx:id="loginArea" layoutX="348.0" layoutY="96.0" />
+      <TextField fx:id="passwordArea" layoutX="348.0" layoutY="198.0" />
+      <Text fx:id="textSignal" layoutX="221.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.0">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
+      <Button defaultButton="true" layoutX="200.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="40.0" prefWidth="200.0" text="Зарегистрироваться">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

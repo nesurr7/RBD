@@ -1,9 +1,7 @@
-
-import sample.Main;
-import sample.Procedure;
+import sample.EntryScene;
 
 public class Launch {
     public static void main(String[] args) {
-        Main.main(args);
+        EntryScene.main(args);
     }
 }
