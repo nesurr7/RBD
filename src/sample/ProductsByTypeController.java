@@ -47,7 +47,7 @@ public class ProductsByTypeController implements Initializable {
     @FXML
     void backToMenu(MouseEvent event) throws IOException {
             Stage stage =(Stage) backProducts.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/Menu.fxml"));
             MenuController.MenuScene = new Scene(root);
             stage.setScene(MenuController.MenuScene);
     }

@@ -13,7 +13,7 @@
    <children>
       <ImageView fx:id="login_image" fitHeight="150.0" fitWidth="200.0" layoutX="107.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../rsc/login.png" />
+            <Image url="@../../rsc/login.png" />
          </image>
       </ImageView>
       <Button defaultButton="true" layoutX="207.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#loginIn" prefHeight="47.0" prefWidth="187.0" text="Вход">
@@ -23,7 +23,7 @@
       </Button>
       <ImageView fitHeight="79.0" fitWidth="240.0" layoutX="107.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../rsc/password.png" />
+            <Image url="@../../rsc/password.png" />
          </image>
       </ImageView>
       <TextField fx:id="loginArea" layoutX="348.0" layoutY="96.0" />

@@ -12,7 +12,7 @@ public class EntryScene extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/LogIn.fxml"));
         Image image = new Image("rsc/icon.jpg");
         LogInController.LOGIN_SCENE = new Scene(root);
         primaryStage.setScene(LogInController.LOGIN_SCENE);

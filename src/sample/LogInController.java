@@ -40,7 +40,7 @@ public class LogInController {
             Stage stage =(Stage) loginArea.getScene().getWindow();
             User.login = login;
             User.password = password;
-            Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/Menu.fxml"));
             MenuController.MenuScene = new Scene(root);
             stage.setScene(MenuController.MenuScene);
         }
@@ -54,7 +54,7 @@ public class LogInController {
     @FXML
     void register(MouseEvent event) throws IOException {
         Stage stage =(Stage) loginArea.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("Reg.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/Reg.fxml"));
         stage.setScene(new Scene(root));
     }
 
