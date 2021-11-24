@@ -1,5 +1,10 @@
 package sample;
 import Connector.JDBCPostgreSQL;
+import Type.ProductType;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableView;
 import users.User;
 
 import java.sql.PreparedStatement;
@@ -8,31 +13,42 @@ import java.sql.SQLException;
 
 public class Procedure {
     /*check logIn*/
-    public static boolean checkUsers(String login, String password) {
+    private static ResultSet select(String sql) throws SQLException {
+        assert JDBCPostgreSQL.con != null;
+        PreparedStatement stmt = JDBCPostgreSQL.con.prepareStatement(sql);
+        return stmt.executeQuery();
+    }
+
+    private static PreparedStatement selectStmt(String sql) throws SQLException {
+        assert JDBCPostgreSQL.con != null;
+        PreparedStatement stmt = JDBCPostgreSQL.con.prepareStatement(sql);
+        return stmt;
+    }
+
+
+    public static boolean checkUsers(String login, String password) throws SQLException {
         try {
-            assert JDBCPostgreSQL.con != null;
-            PreparedStatement stmt = JDBCPostgreSQL.con.prepareStatement("SELECT customer_id,login,user_password FROM customers");
+            PreparedStatement stmt = selectStmt("SELECT customer_id,phone_number,login,user_password FROM customers where login = ? and user_password = ?");
+            stmt.setString(1, login);
+            stmt.setString(2, password);
             ResultSet res = stmt.executeQuery();
-            while (res.next()) {
-                if (res.getString("login").equals(login) && res.getString("user_password").equals(password)) {
-                    User.user_id=res.getInt("customer_id");
-                    return true;
-                }
+            if (res.next()) {
+                User.user_id = res.getInt("customer_id");
+                return true;
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return false;
     }
+
     public static boolean checkLogin(String login) {
         try {
-            assert JDBCPostgreSQL.con != null;
-            PreparedStatement stmt = JDBCPostgreSQL.con.prepareStatement("SELECT login FROM customers");
+            PreparedStatement stmt = selectStmt("SELECT login FROM customers where login = ?");
+            stmt.setString(1,login);
             ResultSet res = stmt.executeQuery();
-            while (res.next()) {
-                if (res.getString(1).equals(login)) {
-                    return true;
-                }
+            if(res.next()){
+                return true;
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -42,13 +58,11 @@ public class Procedure {
 
     public static boolean checkNumber(String num) {
         try {
-            assert JDBCPostgreSQL.con != null;
-            PreparedStatement stmt = JDBCPostgreSQL.con.prepareStatement("SELECT phone_number FROM customers");
+            PreparedStatement stmt = selectStmt("SELECT phone_number FROM customers where phone_number = ?");
+            stmt.setString(1,num);
             ResultSet res = stmt.executeQuery();
-            while (res.next()) {
-                if (res.getString(1).equals(num)) {
-                    return true;
-                }
+            if(res.next()){
+                return true;
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -69,6 +83,19 @@ public class Procedure {
             throwables.printStackTrace();
         }
         return false;
+    }
+
+    public static void setTypes(TableView<ProductType> table) {
+        ObservableList<ProductType> list = FXCollections.observableArrayList();
+        try {
+            ResultSet res = select("SELECT * FROM product_type");
+            while (res.next()) {
+                list.add(new ProductType(res.getInt(1),res.getString(2),res.getInt(3)));
+                table.setItems(list);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
 

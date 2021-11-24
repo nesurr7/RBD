@@ -38,12 +38,11 @@ public class LogInController {
         }
         else if(Procedure.checkUsers(login,password)){
             Stage stage =(Stage) loginArea.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-            stage.setTitle("Menu");
-            MenuController.MenuScene = new Scene(root);
-            stage.setScene(MenuController.MenuScene);
             User.login = login;
             User.password = password;
+            Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+            MenuController.MenuScene = new Scene(root);
+            stage.setScene(MenuController.MenuScene);
         }
         else {
             textSignal.setFill(Color.RED);
@@ -56,7 +55,6 @@ public class LogInController {
     void register(MouseEvent event) throws IOException {
         Stage stage =(Stage) loginArea.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("Reg.fxml"));
-        stage.setTitle("Register");
         stage.setScene(new Scene(root));
     }
 
