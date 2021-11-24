@@ -9,21 +9,10 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegController">
    <children>
-      <TextField fx:id="middleName" layoutX="290.0" layoutY="161.0" prefHeight="0.0" prefWidth="209.0" />
-      <Button fx:id="backMenu" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#backToLogIn" text="Go Back" textFill="#2e00fc">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
       <TextField fx:id="lastName" layoutX="290.0" layoutY="65.0" prefHeight="0.0" prefWidth="209.0" />
       <TextField fx:id="firstName" layoutX="290.0" layoutY="113.0" prefHeight="0.0" prefWidth="209.0" />
-      <Text layoutX="179.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Фамилия" />
-      <Text layoutX="192.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя" />
-      <Text layoutX="178.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отчество" />
-      <Text layoutX="185.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Номер" />
+      <TextField fx:id="middleName" layoutX="290.0" layoutY="161.0" prefHeight="0.0" prefWidth="209.0" />
       <TextField fx:id="number" layoutX="290.0" layoutY="207.0" prefHeight="0.0" prefWidth="209.0" promptText="Формат: x xxx xxx xx xx" />
-      <Text layoutX="187.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Логин" />
-      <Text layoutX="182.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль" />
       <TextField fx:id="login" layoutX="290.0" layoutY="250.0" prefHeight="0.0" prefWidth="209.0" promptText="3-15 знаков" />
       <TextField fx:id="password" layoutX="290.0" layoutY="293.0" prefHeight="0.0" prefWidth="209.0" promptText="5-15 знаков" />
       <Button layoutX="155.0" layoutY="407.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="55.0" prefWidth="290.0" text="Создать аккаунт" textFill="#3717a3">
@@ -31,6 +20,12 @@
             <Font name="System Bold" size="29.0" />
          </font>
       </Button>
+      <Text layoutX="179.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Фамилия" />
+      <Text layoutX="192.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя" />
+      <Text layoutX="178.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отчество" />
+      <Text layoutX="185.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Номер" />
+      <Text layoutX="187.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Логин" />
+      <Text layoutX="182.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль" />
       <Text fx:id="signalText" fill="#fc0000" layoutX="86.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="429.0">
          <font>
             <Font size="15.0" />
@@ -39,6 +34,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Text>
+      <Button fx:id="backMenu" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#backToLogIn" text="Go Back" textFill="#2e00fc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />

@@ -9,7 +9,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
-import java.sql.SQLOutput;
 
 public class RegController {
     @FXML
@@ -44,22 +43,39 @@ public class RegController {
 
     @FXML
     void register(MouseEvent event) throws SQLException {
-        //signalText.setFill(Color.RED);
-        String fName = firstName.getText(), mName = middleName.getText(),lName = lastName.getText(),
-                num=number.getText(), log = login.getText(), pas = password.getText();
+        signalText.setFill(Color.RED);
+        String fName = firstName.getText(), mName = middleName.getText(),lName = lastName.getText();
+        ///////
         if(fName.length()<3 || mName.length()<3 || lName.length()<3){
             signalText.setText("Не верно указано ФИО");
+            return;
         }
-        else if (num.length()!=15) signalText.setText("Не верно указан номер");
-        else if (log.length()<3 || log.length()>15 || pas.length()<5 || pas.length()>15) {
+        ////
+        String num=number.getText().replaceAll(" ","");
+        ////
+        if (num.length()!=11) {
+            signalText.setText("Не верно указан номер");
+            return;
+        }
+        /////
+        else if(Procedure.checkNumber(num)){
+            signalText.setText("Номер занят");
+            return;
+        }
+        String log = login.getText(),pas = password.getText();
+        /////
+        if (log.length()<3 || log.length()>15 || pas.length()<5 || pas.length()>15) {
             signalText.setText("Не верно указан логин или пароль");
         }
-        else if(Procedure.checkLogin(log)) signalText.setText("Логин занят");
-        else{
-            signalText.setFill(Color.GREEN);
-            signalText.setText("Аккаунт зарегистрирован");
+        else if(Procedure.checkLogin(log)) {
+            signalText.setText("Логин занят");
         }
-
+        else{
+            String FIO = lName+" "+fName+" "+mName;
+            if(Procedure.insertUser(FIO,num,log,pas)){
+                signalText.setFill(Color.GREEN);
+                signalText.setText("Аккаунт зарегистрирован");
+            }
+        }
     }
-
 }
