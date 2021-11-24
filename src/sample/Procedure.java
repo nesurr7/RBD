@@ -1,5 +1,6 @@
 package sample;
 import Connector.JDBCPostgreSQL;
+import Product.Product;
 import Type.ProductType;
 
 import javafx.collections.FXCollections;
@@ -97,6 +98,26 @@ public class Procedure {
             throwables.printStackTrace();
         }
     }
+
+    public static void setProducts(TableView<Product> table,int type_id) {
+        ObservableList<Product> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement stmt = selectStmt("SELECT product_name,manufacturer_name,material,color,volume,weight,price, product_features.features_id  from product_features  RIGHT JOIN" +
+                    "(SELECT product_name,features_id, manufacture_id FROM product_type LEFT JOIN products ON products.type_id = product_type.type_id where products.type_id = ?) as res1" +
+                    " ON res1.features_id = product_features.features_id" +
+                    " LEFT JOIN manufacturer ON res1.manufacture_id = manufacturer.manufacturer_id");
+            stmt.setInt(1,type_id);
+            ResultSet res = stmt.executeQuery();
+            while (res.next()) {
+                list.add(new Product(res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getFloat(5), res.getFloat(6),res.getInt(7),res.getInt(8)));
+                table.setItems(list);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+
 
 
 

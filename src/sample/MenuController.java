@@ -1,10 +1,10 @@
 package sample;
 
 import Type.ProductType;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -14,13 +14,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import users.User;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
 
     public static Scene MenuScene;
-
     @FXML
     private Button backMenu;
 
@@ -52,6 +53,20 @@ public class MenuController implements Initializable {
         type_name.setCellValueFactory(new PropertyValueFactory<>("type_name"));
         discount.setCellValueFactory(new PropertyValueFactory<>("discount"));
         Procedure.setTypes(table);
-        //types.getSelectionModel().getSelectedIndex();
+
     }
+
+    @FXML
+    private Button pick;
+
+    @FXML
+    void goToProducts(MouseEvent event) throws IOException {
+        ProductsByTypeController.selected = table.getSelectionModel().getSelectedItem();
+        if(ProductsByTypeController.selected!=null){
+            Stage stage =(Stage) meetingText.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("ProductsByTypeScene.fxml"));
+            stage.setScene(new Scene(root));
+        }
+        }
+
 }

@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
    <children>
-      <Text fill="#f89807" layoutX="-2.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мои заказы" textAlignment="CENTER" wrappingWidth="309.13671875">
+      <Text fill="#f89807" layoutX="10.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мои заказы" textAlignment="CENTER" wrappingWidth="309.13671875">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
@@ -20,19 +20,24 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <ListView layoutX="53.0" layoutY="165.0" prefHeight="230.0" prefWidth="223.0" />
+      <ListView layoutX="54.0" layoutY="109.0" prefHeight="286.0" prefWidth="222.0" />
       <Text fx:id="meetingText" fill="#f89807" layoutX="135.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="309.13671875">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Text>
-      <TableView fx:id="table" layoutX="331.0" layoutY="162.0" prefHeight="230.0" prefWidth="244.0">
+      <TableView fx:id="table" layoutX="326.0" layoutY="106.0" prefHeight="286.0" prefWidth="259.0">
         <columns>
-          <TableColumn fx:id="id" prefWidth="46.0" text="ID" />
-          <TableColumn fx:id="type_name" prefWidth="130.0" text="Название" />
-            <TableColumn fx:id="discount" prefWidth="67.0" text="Скидка" />
+          <TableColumn fx:id="id" prefWidth="37.0" text="ID" />
+          <TableColumn fx:id="type_name" prefWidth="160.0" text="Название" />
+            <TableColumn fx:id="discount" prefWidth="48.0" text="Скидка" />
         </columns>
       </TableView>
-      <Button layoutX="370.0" layoutY="412.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="167.0" text="Выбрать" />
+      <Button fx:id="pick" layoutX="370.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#goToProducts" prefHeight="49.0" prefWidth="167.0" text="Выбрать" />
+      <Text fill="#f89807" layoutX="299.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Категории товаров" textAlignment="CENTER" wrappingWidth="309.13671875">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
