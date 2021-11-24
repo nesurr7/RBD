@@ -57,7 +57,11 @@ public class MenuController implements Initializable {
     }
 
     @FXML
-    private Button pick;
+    void goToOrders(MouseEvent event) throws IOException {
+        Stage stage =(Stage) meetingText.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("Orders.fxml"));
+        stage.setScene(new Scene(root));
+    }
 
     @FXML
     void goToProducts(MouseEvent event) throws IOException {
