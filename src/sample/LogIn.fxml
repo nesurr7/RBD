@@ -28,7 +28,7 @@
       </ImageView>
       <TextField fx:id="loginArea" layoutX="348.0" layoutY="96.0" />
       <TextField fx:id="passwordArea" layoutX="348.0" layoutY="198.0" />
-      <Text fx:id="textSignal" layoutX="221.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.0">
+      <Text fx:id="textSignal" layoutX="39.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="523.0">
          <font>
             <Font size="30.0" />
          </font>

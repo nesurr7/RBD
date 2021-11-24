@@ -1,5 +1,6 @@
 package sample;
 import Connector.JDBCPostgreSQL;
+import users.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,10 +11,11 @@ public class Procedure {
     public static boolean checkUsers(String login, String password) {
         try {
             assert JDBCPostgreSQL.con != null;
-            PreparedStatement stmt = JDBCPostgreSQL.con.prepareStatement("SELECT login,user_password FROM customers");
+            PreparedStatement stmt = JDBCPostgreSQL.con.prepareStatement("SELECT customer_id,login,user_password FROM customers");
             ResultSet res = stmt.executeQuery();
             while (res.next()) {
                 if (res.getString("login").equals(login) && res.getString("user_password").equals(password)) {
+                    User.user_id=res.getInt("customer_id");
                     return true;
                 }
             }

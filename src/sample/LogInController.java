@@ -29,6 +29,7 @@ public class LogInController {
 
     @FXML
     void loginIn(MouseEvent event) throws IOException, SQLException {
+        textSignal.setText("");
         String password = passwordArea.getText(),login = loginArea.getText();
         if(password.equals(Admin.password) && login.equals(Admin.login)){
             textSignal.setFill(Color.BLUE);
@@ -39,13 +40,14 @@ public class LogInController {
             Stage stage =(Stage) loginArea.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
             stage.setTitle("Menu");
-            stage.setScene(new Scene(root));
+            MenuController.MenuScene = new Scene(root);
+            stage.setScene(MenuController.MenuScene);
             User.login = login;
             User.password = password;
         }
         else {
             textSignal.setFill(Color.RED);
-            textSignal.setText("Ошибка");
+            textSignal.setText("Проверьте Логин/Пароль");
         }
 
     }
@@ -54,7 +56,7 @@ public class LogInController {
     void register(MouseEvent event) throws IOException {
         Stage stage =(Stage) loginArea.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("Reg.fxml"));
-        stage.setTitle("Menu");
+        stage.setTitle("Register");
         stage.setScene(new Scene(root));
     }
 
