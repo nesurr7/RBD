@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="558.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.OrdersContoller">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.OrdersContoller">
    <children>
-      <Text fill="#ff9a04" layoutX="219.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="МОИ ЗАКАЗЫ" textAlignment="CENTER" wrappingWidth="250.13671875">
+      <Text fill="#ff9a04" layoutX="375.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="МОИ ЗАКАЗЫ" textAlignment="CENTER" wrappingWidth="250.13671875">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
@@ -16,7 +16,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <TableView fx:id="table" layoutX="25.0" layoutY="112.0" prefHeight="416.0" prefWidth="638.0">
+      <TableView fx:id="table" layoutX="14.0" layoutY="102.0" prefHeight="489.0" prefWidth="974.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="46.0" text="ID" />
           <TableColumn fx:id="type" prefWidth="104.0" text="Тип" />
@@ -24,7 +24,7 @@
             <TableColumn fx:id="manufacturer" prefWidth="102.0" text="Производитель" />
             <TableColumn fx:id="cost" prefWidth="68.0" text="Цена" />
             <TableColumn fx:id="date" prefWidth="91.0" text="Дата доставки" />
-            <TableColumn fx:id="address" prefWidth="109.0" text="Адрес доставки" />
+            <TableColumn fx:id="address" prefWidth="443.0" text="Адрес доставки" />
         </columns>
       </TableView>
    </children>
