@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RootMenuController">
+   <children>
+      <Button fx:id="backRoot" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#backToLogin" text="Go Back" textFill="#2e00fc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="247.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#deleteOrder" prefHeight="57.0" prefWidth="112.0" text="Удалить">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="id" layoutX="390.0" layoutY="152.0" onMouseClicked="#deleteOrder" prefHeight="45.0" prefWidth="336.0" promptText="ID заказа для удаления">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </TextField>
+      <Text fx:id="success" fill="#00c30a" layoutX="769.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Успешно" textAlignment="CENTER" visible="false" wrappingWidth="141.13671875">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

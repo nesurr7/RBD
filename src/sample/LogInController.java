@@ -32,9 +32,9 @@ public class LogInController {
         textSignal.setText("");
         String password = passwordArea.getText(),login = loginArea.getText();
         if(password.equals(Admin.password) && login.equals(Admin.login)){
-            textSignal.setFill(Color.BLUE);
-            textSignal.setText("Админ");
-            //окно Админа
+            Stage stage =(Stage) loginArea.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("fxml/rootMenu.fxml"));
+            stage.setScene(new Scene(root));
         }
         else if(Procedure.checkUsers(login,password)){
             Stage stage =(Stage) loginArea.getScene().getWindow();

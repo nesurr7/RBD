@@ -22,6 +22,8 @@ import java.util.ResourceBundle;
 public class MenuController implements Initializable {
 
     public static Scene MenuScene;
+    public Button pick;
+    public Button OrdersButton;
     @FXML
     private Button backMenu;
 
@@ -68,7 +70,7 @@ public class MenuController implements Initializable {
         ProductsByTypeController.selected = table.getSelectionModel().getSelectedItem();
         if(ProductsByTypeController.selected!=null){
             Stage stage =(Stage) meetingText.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("fxml/ProductsByTypeScene.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("C:\\RBD\\src\\sample\\fxml\\ProductsByTypeScene.fxml"));
             stage.setScene(new Scene(root));
             ProductsByTypeController.discount = ProductsByTypeController.selected.getDiscount();
         }
