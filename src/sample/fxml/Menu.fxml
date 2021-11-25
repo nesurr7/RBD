@@ -6,12 +6,12 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
    <children>
-      <Button fx:id="backMenu" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#backToLogIn" text="Go Back" textFill="#2e00fc">
+      <Button fx:id="backMenu" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#backToLogIn" text="Назад" textFill="#2e00fc">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Text fx:id="meetingText" fill="#f89807" layoutX="131.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="572.13671875">
+      <Text fx:id="meetingText" fill="#f89807" layoutX="131.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="572.13671875">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>

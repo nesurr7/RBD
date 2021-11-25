@@ -13,9 +13,9 @@
             <Image url="@../../rsc/login.png" />
          </image>
       </ImageView>
-      <Button defaultButton="true" layoutX="405.0" layoutY="440.0" mnemonicParsing="false" onMouseClicked="#loginIn" prefHeight="47.0" prefWidth="187.0" text="Вход">
+      <Button defaultButton="true" layoutX="394.0" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#loginIn" prefHeight="49.0" prefWidth="208.0" text="Вход">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
       </Button>
       <ImageView fitHeight="96.0" fitWidth="244.0" layoutX="145.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
@@ -36,7 +36,7 @@
             <Font size="59.0" />
          </font>
       </Text>
-      <Button defaultButton="true" layoutX="400.0" layoutY="523.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="40.0" prefWidth="200.0" text="Зарегистрироваться">
+      <Button defaultButton="true" layoutX="322.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="69.0" prefWidth="353.0" text="Зарегистрироваться">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>

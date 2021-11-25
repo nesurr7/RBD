@@ -70,6 +70,7 @@ public class MenuController implements Initializable {
             Stage stage =(Stage) meetingText.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("fxml/ProductsByTypeScene.fxml"));
             stage.setScene(new Scene(root));
+            ProductsByTypeController.discount = ProductsByTypeController.selected.getDiscount();
         }
         }
 

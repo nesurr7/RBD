@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProductsByTypeController">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProductsByTypeController">
    <children>
-      <Text fx:id="textType" layoutX="188.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="224.13671875">
+      <Text fx:id="textType" fill="#ffb109" layoutX="250.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="511.13671875">
          <font>
-            <Font size="43.0" />
+            <Font name="System Bold" size="43.0" />
          </font>
       </Text>
       <Button fx:id="backProducts" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#backToMenu" text="Go Back" textFill="#2e00fc">
@@ -16,7 +20,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <TableView fx:id="table" layoutX="123.0" layoutY="94.0" prefHeight="368.0" prefWidth="754.0">
+      <TableView fx:id="table" layoutX="123.0" layoutY="99.0" prefHeight="368.0" prefWidth="754.0">
         <columns>
           <TableColumn fx:id="name" prefWidth="75.0" text="Название" />
           <TableColumn fx:id="manufacturer" prefWidth="161.0" text="Производитель" />
@@ -27,10 +31,45 @@
             <TableColumn fx:id="price" prefWidth="85.0" text="Цена" />
         </columns>
       </TableView>
-      <Button defaultButton="true" layoutX="382.0" layoutY="479.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="237.0" text="Заказать" textAlignment="CENTER">
+      <Button defaultButton="true" layoutX="612.0" layoutY="568.0" mnemonicParsing="false" onMouseClicked="#orderInit" prefHeight="81.0" prefWidth="256.0" text="Заказать" textAlignment="CENTER">
          <font>
             <Font size="44.0" />
          </font>
       </Button>
+      <TextField fx:id="date" layoutX="170.0" layoutY="494.0" prefHeight="51.0" prefWidth="396.0" promptText="Укажите дату в формате xx.xx.xxxx">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="address" layoutX="170.0" layoutY="555.0" prefHeight="44.0" prefWidth="396.0" promptText="Адрес: индекс,область,город,улица,дом">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="method" layoutX="170.0" layoutY="615.0" prefHeight="51.0" prefWidth="396.0" promptText="Онлайн/Наличными">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Text fx:id="error1" fill="#f80000" layoutX="69.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Не верно" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="error2" fill="#f80000" layoutX="69.0" layoutY="586.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Не верно" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="error3" fill="#f80000" layoutX="69.0" layoutY="648.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Не верно" visible="false">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="error4" fill="#f81111" layoutX="641.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберите товар" visible="false" wrappingWidth="197.13671875">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

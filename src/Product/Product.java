@@ -1,6 +1,7 @@
 package Product;
 
 public class Product {
+
     private String name;
     private String manufacturer;
     private String material;
@@ -8,7 +9,7 @@ public class Product {
     private float volume;
     private float weight;
     private int price;
-    private int features_id;
+    private int id;
     public Product(String name,
                    String manufacturer,
                    String material,
@@ -16,7 +17,7 @@ public class Product {
                    float volume,
                    float weight,
                    int price,
-                   int features_id){
+                   int id){
         this.name=name;
         this.manufacturer=manufacturer;
         this.material=material;
@@ -24,7 +25,7 @@ public class Product {
         this.volume=volume;
         this.weight=weight;
         this.price=price;
-        this.features_id=features_id;
+        this.id=id;
     }
 
     public float getVolume() {
@@ -35,8 +36,8 @@ public class Product {
         return weight;
     }
 
-    public int getFeatures_id() {
-        return features_id;
+    public int getId() {
+        return id;
     }
 
     public int getPrice() {
@@ -63,8 +64,8 @@ public class Product {
         this.color = color;
     }
 
-    public void setFeatures_id(int features_id) {
-        this.features_id = features_id;
+    public void setId(int features_id) {
+        this.id = id;
     }
 
     public void setManufacturer(String manufacturer) {
