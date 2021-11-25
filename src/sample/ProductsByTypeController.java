@@ -100,6 +100,9 @@ public class ProductsByTypeController implements Initializable {
     private Text error4;
 
     @FXML
+    private Button enter;
+
+    @FXML
     void orderInit(MouseEvent event) throws SQLException {
         error1.setVisible(false);
         error2.setVisible(false);
